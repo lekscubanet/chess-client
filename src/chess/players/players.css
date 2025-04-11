@@ -1,48 +1,47 @@
-
 .players_info {
-    font-weight: 600;
-    font-size: 20px;
-    user-select: none;
-    border: 2px solid darkgreen;
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    width:280px;
-    max-width: 280px;
+  font-weight: 600;
+  font-size: 20px;
+  user-select: none;
+  border: 2px solid darkgreen;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  max-width: 280px;
 }
 
 .players_info p {
-    text-align: center;
+  text-align: center;
 }
 
 .players_info div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding:10px 20px;
-    border: 1px solid darkgreen;
-    margin: 10px;
-    border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 20px;
+  border: 1px solid darkgreen;
+  margin: 10px;
+  border-radius: 15px;
 }
 
 .players_info input {
-    width: 70%;
-    height: 40px;
-    font-size:18px;
-    font-weight: 600;
-    padding:7px;
-    margin: 10px;
+  width: 70%;
+  height: 40px;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 7px;
+  margin: 10px;
 }
 
-.players_info__join_btn {
-    width: 70%;
-    height: 40px;
-    margin: 10px;
-    cursor:pointer;
-    font-weight: 600;
-    font-size: 14px;
+.players_info_join_btn {
+  width: 70%;
+  height: 40px;
+  margin: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
 }
 
-.players_info__join_btn:hover {
-    background-color: green;
+.players_info_join_btn:hover {
+  background-color: green;
 }

@@ -1,42 +1,39 @@
 import React from 'react';
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 interface CreateLobby {
-    success: boolean;
-    lobbyID: string;
+  success: boolean;
+  lobbyID: string;
 }
 
-function CreateLobby() {
+const CreateLobby = () => {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  const handleClick = async () => {
+    try {
+      const res = await fetch('http://localhost:3000/api/createlobby', {
+        method: 'GET',
+      });
 
-    const handleClick = async () => {
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
 
-        try {
+      const data: CreateLobby = await res.json();
 
-            const res = await fetch("http://localhost:3000/api/createlobby", {method: "GET"});
+      if (data.success && data.lobbyID) {
+        navigate(`/game/${data.lobbyID}`);
+      }
+    } catch (error) {
+      console.error('Cant gey lobby', error);
+    }
+  };
 
-            if (!res.ok) {
-                throw new Error(`HTTP error! Status: ${res.status}`);
-            }
-
-            const data: CreateLobby = await res.json();
-
-            if (data.success && data.lobbyID) {
-                navigate(`/game/${data.lobbyID}`);
-            }
-
-
-        } catch (error) {
-
-        }
-
-
-    };
-
-    return (
-        <button onClick={handleClick} className="create_lobby_btn">Создать лобби</button>
-    );
+  return (
+    <button onClick={handleClick} className="create_lobby_btn">
+      Создать лобби
+    </button>
+  );
 }
 
 export default CreateLobby;
